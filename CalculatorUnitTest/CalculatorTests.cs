@@ -417,7 +417,7 @@ namespace CalculatorUnitTest
         [DataTestMethod]
         [DataRow(2.5, 1.5, 1.67)]
         [DataRow(1.5, 2.5, 0.6)]
-        [DataRow(2.5, 7.5, 0.3)]
+        [DataRow(2.5, 7.5, 0.33)]
         [DataRow(3.5, 4.5, 0.78)]
         public void CalculatorDivisionFunctionMustDivideTwoUniquePositiveDecimals(double left, double right, double expected)
         {
