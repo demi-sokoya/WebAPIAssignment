@@ -258,7 +258,113 @@ namespace CalculatorUnitTest
             Assert.AreEqual(expected, result);
         }
 
-        
+        [DataTestMethod]
+        [DataRow(-1, -2, 2)]
+        [DataRow(-2, -3, 6)]
+        [DataRow(-3, -4, 12)]
+        [DataRow(-4, -5, 20)]
+        public void CalculatorMultiplicationFunctionMustMultiplyTwoUniqueNegativeIntegers(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, 1, 1)]
+        [DataRow(2, 2, 4)]
+        [DataRow(3, 3, 9)]
+        [DataRow(4, 4, 16)]
+        public void CalculatorMultiplicationFunctionMustMultiplyAPositiveNumberToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-1, -1, 1)]
+        [DataRow(-2, -2, 4)]
+        [DataRow(-3, -3, 9)]
+        [DataRow(-4, -4, 16)]
+        public void CalculatorMultiplicationFunctionMustMultiplyANegativeNumberToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, 1.5, 0.75)]
+        [DataRow(1.5, 2.5, 3.75)]
+        [DataRow(2.5, 3.5, 8.75)]
+        [DataRow(3.5, 4.5, 15.75)]
+        public void CalculatorMultiplicationFunctionMustMultiplyTwoUniquePositiveDecimals(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, 0.5, 0.25)]
+        [DataRow(1.5, 1.5, 2.25)]
+        [DataRow(2.5, 2.5, 6.25)]
+        [DataRow(3.5, 3.5, 12.25)]
+        public void CalculatorMultiplicationFunctionMustMultiplyADecimalToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-0.5, -0.5, 0.25)]
+        [DataRow(-1.5, -1.5, 2.25)]
+        [DataRow(-2.5, -2.5, 6.25)]
+        [DataRow(-3.5, -3.5, 12.25)]
+        public void CalculatorMultiplicationFunctionMustMultiplyANegativeDecimalToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-0.5, -1.5, 0.75)]
+        [DataRow(-1.5, -2.5, 3.75)]
+        [DataRow(-2.5, -3.5, 8.75)]
+        [DataRow(-3.5, -4.5, 15.75)]
+        public void CalculatorMultiplicationFunctionMustMultiplyTwoUniqueNegativeDecimals(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, -1, -1)]
+        [DataRow(2, -3, -6)]
+        [DataRow(3, -7, -21)]
+        [DataRow(4, -9, -36)]
+        public void CalculatorMultiplicationFunctionMustMultiplyOnePositiveAndOneNegativeInteger(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, -1.5, -0.75)]
+        [DataRow(1.5, -2.5, -3.75)]
+        [DataRow(2.5, -3.5, -8.75)]
+        [DataRow(3.5, -4.5, -15.75)]
+        public void CalculatorMultiplicationFunctionMustMultiplyOnePositiveAndOneNegativeDecimal(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
     }
 
 }
