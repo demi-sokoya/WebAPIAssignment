@@ -3,44 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using CalculatorLogic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CalculatorAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class CalculatorController : Controller
+    public class CalculatorController : ControllerBase
     {
-        // GET: api/values
+        //Made use of properties here because it would be repeated through all api cals
+        [FromQuery]
+        public double number1 { get; set; }
+
+        [FromQuery]
+        public double number2 { get; set; }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public double Addition()
         {
-            return new string[] { "value1", "value2" };
+            return Calc.Add(number1, number2);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public double Subtraction()
         {
-            return "value";
+            return Calc.Subtract(number1, number2);
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet]
+        public double Multiplication()
         {
+            return Calc.Multiply(number1, number2);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        [HttpGet]
+        public double Division()
+        { //dividing by 0 returns a long error message but here we just replace it with -1
+            if (number2 == 0)
+            {
+                return -1;
+            }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            else
+            {
+                return Calc.Divide(number1, number2);
+            }
         }
     }
 }
