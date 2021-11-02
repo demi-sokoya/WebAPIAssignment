@@ -13,5 +13,10 @@ namespace CalculatorLogic
         {
             return left - right;
         }
+
+        public static double Multiply(double left, double right)
+        {
+            return left * right;
+        }
     }
 }

@@ -138,6 +138,115 @@ namespace CalculatorUnitTest
             Assert.AreEqual(expected, result);
         }
 
+        [DataTestMethod]
+        [DataRow(-1, -2, 1)]
+        [DataRow(-2, -3, 1)]
+        [DataRow(-3, -4, 1)]
+        [DataRow(-4, -5, 1)]
+        public void CalculatorSubtractionFunctionMustSubtractTwoUniqueNegativeIntegers(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, 1, 0)]
+        [DataRow(2, 2, 0)]
+        [DataRow(3, 3, 0)]
+        [DataRow(4, 4, 0)]
+        public void CalculatorSubtractionFunctionMustSubtractAPositiveNumberToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-1, -1, 0)]
+        [DataRow(-2, -2, 0)]
+        [DataRow(-3, -3, 0)]
+        [DataRow(-4, -4, 0)]
+        public void CalculatorSubtractionFunctionMustSubtractANegativeNumberToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, 1.5, -1)]
+        [DataRow(1.5, 2.5, -1)]
+        [DataRow(2.5, 3.5, -1)]
+        [DataRow(3.5, 4.5, -1)]
+        public void CalculatorSubtractionFunctionMustSubtractTwoUniquePositiveDecimals(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, 0.5, 0)]
+        [DataRow(1.5, 1.5, 0)]
+        [DataRow(2.5, 2.5, 0)]
+        [DataRow(3.5, 3.5, 0)]
+        public void CalculatorSubtractionFunctionMustSubtractADecimalToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-0.5, -0.5, 0)]
+        [DataRow(-1.5, -1.5, 0)]
+        [DataRow(-2.5, -2.5, 0)]
+        [DataRow(-3.5, -3.5, 0)]
+        public void CalculatorSubtractionFunctionMustSubtractANegativeDecimalToItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-0.5, -1.5, 1)]
+        [DataRow(-1.5, -2.5, 1)]
+        [DataRow(-2.5, -3.5, 1)]
+        [DataRow(-3.5, -4.5, 1)]
+        public void CalculatorSubtractionFunctionMustSubtractTwoUniqueNegativeDecimals(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, -1, 2)]
+        [DataRow(2, -3, 5)]
+        [DataRow(3, -7, 10)]
+        [DataRow(4, -9, 13)]
+        public void CalculatorSubtractionFunctionMustSubtractOnePositiveAndOneNegativeInteger(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, -1.5, 2)]
+        [DataRow(1.5, -2.5, 4)]
+        [DataRow(2.5, -3.5, 6)]
+        [DataRow(3.5, -4.5, 8)]
+        public void CalculatorSubtractionFunctionMustSubtractOnePositiveAndOneNegativeDecimal(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
         
     }
+
 }
