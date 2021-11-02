@@ -125,5 +125,19 @@ namespace CalculatorUnitTest
             result = Calc.Add(left, right);
             Assert.AreEqual(expected, result);
         }
+
+        [DataTestMethod]
+        [DataRow(1, 2, -1)]
+        [DataRow(2, 3, -1)]
+        [DataRow(3, 4, -1)]
+        [DataRow(4, 5, -1)]
+        public void CalculatorSubtractionFunctionMustSubtractTwoUniquePositiveIntegers(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Subtract(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        
     }
 }
