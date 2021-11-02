@@ -155,7 +155,7 @@ namespace CalculatorUnitTest
         [DataRow(2, 2, 0)]
         [DataRow(3, 3, 0)]
         [DataRow(4, 4, 0)]
-        public void CalculatorSubtractionFunctionMustSubtractAPositiveNumberToItself(double left, double right, double expected)
+        public void CalculatorSubtractionFunctionMustSubtractAPositiveNumberFromItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Subtract(left, right);
@@ -167,7 +167,7 @@ namespace CalculatorUnitTest
         [DataRow(-2, -2, 0)]
         [DataRow(-3, -3, 0)]
         [DataRow(-4, -4, 0)]
-        public void CalculatorSubtractionFunctionMustSubtractANegativeNumberToItself(double left, double right, double expected)
+        public void CalculatorSubtractionFunctionMustSubtractANegativeNumberFromItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Subtract(left, right);
@@ -191,7 +191,7 @@ namespace CalculatorUnitTest
         [DataRow(1.5, 1.5, 0)]
         [DataRow(2.5, 2.5, 0)]
         [DataRow(3.5, 3.5, 0)]
-        public void CalculatorSubtractionFunctionMustSubtractADecimalToItself(double left, double right, double expected)
+        public void CalculatorSubtractionFunctionMustSubtractADecimalFromItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Subtract(left, right);
@@ -203,7 +203,7 @@ namespace CalculatorUnitTest
         [DataRow(-1.5, -1.5, 0)]
         [DataRow(-2.5, -2.5, 0)]
         [DataRow(-3.5, -3.5, 0)]
-        public void CalculatorSubtractionFunctionMustSubtractANegativeDecimalToItself(double left, double right, double expected)
+        public void CalculatorSubtractionFunctionMustSubtractANegativeDecimalFromItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Subtract(left, right);
@@ -275,7 +275,7 @@ namespace CalculatorUnitTest
         [DataRow(2, 2, 4)]
         [DataRow(3, 3, 9)]
         [DataRow(4, 4, 16)]
-        public void CalculatorMultiplicationFunctionMustMultiplyAPositiveNumberToItself(double left, double right, double expected)
+        public void CalculatorMultiplicationFunctionMustMultiplyAPositiveNumberByItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Multiply(left, right);
@@ -287,7 +287,7 @@ namespace CalculatorUnitTest
         [DataRow(-2, -2, 4)]
         [DataRow(-3, -3, 9)]
         [DataRow(-4, -4, 16)]
-        public void CalculatorMultiplicationFunctionMustMultiplyANegativeNumberToItself(double left, double right, double expected)
+        public void CalculatorMultiplicationFunctionMustMultiplyANegativeNumberByItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Multiply(left, right);
@@ -311,7 +311,7 @@ namespace CalculatorUnitTest
         [DataRow(1.5, 1.5, 2.25)]
         [DataRow(2.5, 2.5, 6.25)]
         [DataRow(3.5, 3.5, 12.25)]
-        public void CalculatorMultiplicationFunctionMustMultiplyADecimalToItself(double left, double right, double expected)
+        public void CalculatorMultiplicationFunctionMustMultiplyADecimalByItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Multiply(left, right);
@@ -323,7 +323,7 @@ namespace CalculatorUnitTest
         [DataRow(-1.5, -1.5, 2.25)]
         [DataRow(-2.5, -2.5, 6.25)]
         [DataRow(-3.5, -3.5, 12.25)]
-        public void CalculatorMultiplicationFunctionMustMultiplyANegativeDecimalToItself(double left, double right, double expected)
+        public void CalculatorMultiplicationFunctionMustMultiplyANegativeDecimalByItself(double left, double right, double expected)
         {
             double result;
             result = Calc.Multiply(left, right);
@@ -365,6 +365,20 @@ namespace CalculatorUnitTest
             result = Calc.Multiply(left, right);
             Assert.AreEqual(expected, result);
         }
+
+        [DataTestMethod]
+        [DataRow(1, 2, 0.5)]
+        [DataRow(2, 4, 0.5)]
+        [DataRow(3, 4, 0.75)]
+        [DataRow(4, 5, 0.8)]
+        public void CalculatorDivisionFunctionMustDivideTwoUniquePositiveIntegers(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        
     }
 
 }

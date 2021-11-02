@@ -18,5 +18,10 @@ namespace CalculatorLogic
         {
             return left * right;
         }
+
+        public static double Divide(double left, double right)
+        {
+            return Math.Round(left / right, 2);
+        }
     }
 }
