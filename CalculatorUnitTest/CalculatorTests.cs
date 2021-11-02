@@ -246,6 +246,18 @@ namespace CalculatorUnitTest
             Assert.AreEqual(expected, result);
         }
 
+        [DataTestMethod]
+        [DataRow(1, 2, 2)]
+        [DataRow(2, 3, 6)]
+        [DataRow(3, 4, 12)]
+        [DataRow(4, 5, 20)]
+        public void CalculatorMultiplicationFunctionMustMultiplyTwoUniquePositiveIntegers(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Multiply(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
         
     }
 
