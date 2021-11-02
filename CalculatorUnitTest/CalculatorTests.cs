@@ -378,7 +378,113 @@ namespace CalculatorUnitTest
             Assert.AreEqual(expected, result);
         }
 
-        
+        [DataTestMethod]
+        [DataRow(-1, -2, 0.5)]
+        [DataRow(-2, -4, 0.5)]
+        [DataRow(-3, -4, 0.75)]
+        [DataRow(-4, -5, 0.8)]
+        public void CalculatorDivisionFunctionMustDivideTwoUniqueNegativeIntegers(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, 1, 1)]
+        [DataRow(2, 2, 1)]
+        [DataRow(3, 3, 1)]
+        [DataRow(4, 4, 1)]
+        public void CalculatorDivisionFunctionMustDivideAPositiveNumberByItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-1, -1, 1)]
+        [DataRow(-2, -2, 1)]
+        [DataRow(-3, -3, 1)]
+        [DataRow(-4, -4, 1)]
+        public void CalculatorDivisionFunctionMustDivideANegativeNumberByItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(2.5, 1.5, 1.67)]
+        [DataRow(1.5, 2.5, 0.6)]
+        [DataRow(2.5, 7.5, 0.3)]
+        [DataRow(3.5, 4.5, 0.78)]
+        public void CalculatorDivisionFunctionMustDivideTwoUniquePositiveDecimals(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, 0.5, 1)]
+        [DataRow(1.5, 1.5, 1)]
+        [DataRow(2.5, 2.5, 1)]
+        [DataRow(3.5, 3.5, 1)]
+        public void CalculatorDivisionFunctionMustDivideADecimalByItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-0.5, -0.5, 1)]
+        [DataRow(-1.5, -1.5, 1)]
+        [DataRow(-2.5, -2.5, 1)]
+        [DataRow(-3.5, -3.5, 1)]
+        public void CalculatorDivisionFunctionMustDivideANegativeDecimalByItself(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-0.5, -1.5, 0.33)]
+        [DataRow(-1.5, -2.5, 0.6)]
+        [DataRow(-2.5, -3.5, 0.71)]
+        [DataRow(-3.5, -4.5, 0.78)]
+        public void CalculatorDivisionFunctionMustDivideTwoUniqueNegativeDecimals(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, -1, -1)]
+        [DataRow(2, -3, -0.67)]
+        [DataRow(3, -7, -0.43)]
+        [DataRow(4, -9, -0.44)]
+        public void CalculatorDivisionFunctionMustDivideOnePositiveAndOneNegativeInteger(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.5, -1.5, -0.33)]
+        [DataRow(1.5, -2.5, -0.6)]
+        [DataRow(2.5, -3.5, -0.71)]
+        [DataRow(3.5, -4.5, -0.78)]
+        public void CalculatorDivisionFunctionMustDivideOnePositiveAndOneNegativeDecimal(double left, double right, double expected)
+        {
+            double result;
+            result = Calc.Divide(left, right);
+            Assert.AreEqual(expected, result);
+        }
     }
 
 }
